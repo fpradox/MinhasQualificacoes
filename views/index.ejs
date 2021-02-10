@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Testando esta pagina</p>
-    <h1>Teste da pagina</h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/">  
+    <label for="nome">Digite o seu nome:</label><br>
+    <input type="text" id="nome" name="nome" value="<%= nome %>"><br>
+    <label for="cpf">Digite o seu CPF:</label><br>
+    <input type="text" id="cpf" name="cpf" value="<%= cpf %>"><br><br>
+    <input type="submit" value="Validar">
+  
+    <% if (cpfValidado){ %>
+      <div class="sucesso">
+        CPF validado com sucesso
+      </div>
+    <% }else{ %>
+      <div class="erro">
+        CPF Não é válido
+      </div>
+    <% } %>
+  </form>
+  
+</body>
 </html>
